@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gmail Contacts</title>
+</head>
+<body>
+    <h2>List of contacts</h2>
+    <table border="2" style="width:50%">
+        <thead>
+        <tr>
+            <th><input type="checkbox" id="selectall" /></th>
+            <th>Contacts</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+                <tr style="text-align: center">
+                    <td><input type="checkbox" class="case" /></td>
+                    <td>{{ d }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script>
+         $(document).ready(function() {
+      // add multiple select / deselect functionality
+        $("#selectall").click(function() {
+        $('.case').attr('checked', this.checked);
+         });
+     // if all checkbox are selected, check the selectall checkbox  also
+{#     $(".case").click(function() {#}
+{#        if ($(".case").length == $(".case:checked").length) {#}
+{#        $("#selectall").attr("checked", "checked");#}
+{#         }#}
+{#        else {#}
+{#        $("#selectall").removeAttr("checked");#}
+{#         }#}
+{#         });#}
+     });
+    </script>
+</head>
+
