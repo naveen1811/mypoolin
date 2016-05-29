@@ -25,7 +25,11 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+deploy_url = 'https://mypoolin.herokuapp.com'
 
+#Google Pus settings
+CLIENT_ID = '977890289014-oug5ohgk1q6qod8gp1hbllm4c4qo2cjh.apps.googleusercontent.com'
+CLIENT_SECRET = 'YH39lQckLYY9zMOotVe_I7bW'
 
 # Application definition
 

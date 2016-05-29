@@ -2,6 +2,9 @@ import requests
 from django.shortcuts import render
 from bs4 import BeautifulSoup
 
+from mypoolin.settings import CLIENT_SECRET, CLIENT_ID, deploy_url
+
+
 def login_page(request):
     '''Render to login Page'''
     return render(request, 'mail/login.html')
@@ -10,10 +13,11 @@ def get_google_login(request):
 
     if request.method == "GET":
         gcode = request.GET['code']
-        client_id = '977890289014-oug5ohgk1q6qod8gp1hbllm4c4qo2cjh.apps.googleusercontent.com'  #Google cient_id
-        redirect_uri = 'http://localhost:8000/mail/get_google_login/'
+        client_id = CLIENT_ID  #Google cient_id
+        print 1
+        redirect_uri = '{0}/mail/get_google_login/'.format(deploy_url)
         grant_type = 'authorization_code'
-        client_secret = 'YH39lQckLYY9zMOotVe_I7bW'
+        client_secret = CLIENT_SECRET
         result = requests.post("https://accounts.google.com/o/oauth2/token",    #Post method token request g+
                           data={                                                #Parameters
                               'code': gcode,
