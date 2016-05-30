@@ -25,8 +25,8 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-# deploy_url = 'https://mypoolin.herokuapp.com'
-deploy_url = 'http://localhost:8000'
+deploy_url = 'https://mypoolin.herokuapp.com'
+# deploy_url = 'http://localhost:8000'
 
 #Google Pus settings
 CLIENT_ID = '977890289014-oug5ohgk1q6qod8gp1hbllm4c4qo2cjh.apps.googleusercontent.com'
