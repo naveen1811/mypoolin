@@ -13,8 +13,7 @@ def get_google_login(request):
 
     if request.method == "GET":
         gcode = request.GET['code']
-        client_id = CLIENT_ID  #Google cient_id
-        print 1
+        client_id = CLIENT_ID                                                   #Google client_id
         redirect_uri = '{0}/mail/get_google_login/'.format(deploy_url)
         grant_type = 'authorization_code'
         client_secret = CLIENT_SECRET
@@ -33,6 +32,7 @@ def get_google_login(request):
         dic = soup.find_all('entry')
         data = []
         for i in dic:
-            data.append(i.find('title').text)
+            if i.find({'gd:email','address'}):
+                data.append(i.find('gd:email')['address'])
         return render(request, 'mail/contacts.html', {'data': data})
 
